@@ -1,0 +1,885 @@
+:root {
+    --taupe: rgb(90, 83, 81);
+    --ink: #5f5f5f;
+    --cream: #fffdf0;
+    --sand: #cbb1a4;
+    --glass: rgba(255, 255, 255, 0.35);
+    --nav: calc(10vh + 10px);
+} /*Ai porvided this Thing for coloring thanks i guess*/
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    color: var(--taupe);
+    background: #fff;
+    overflow-x: clip;
+}
+button {
+    font-family: inherit;
+}
+h1, h2, h3 {
+    color: var(--ink);
+}
+main section {
+    display: flex;
+    flex-direction: column;
+}
+span {
+    padding-right: 7%;
+}
+
+/********************************************************************** Header **********************************************************************/
+header {
+    background-color: rgba(236, 236, 236, 0.219);
+    border-left: 1.5px solid var(--cream);
+    border-right: 1.5px solid var(--cream);
+    box-shadow: 0 2px 7px 0.4px rgb(116, 116, 116);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vh;
+    z-index: 100;
+    position: fixed;
+    height: 90vh;
+    border-radius: calc(10vh + 50px);
+    width: var(--nav);
+    top: 5%;
+    left: 2%;
+    animation: head 1.6s ease-out;
+}
+@keyframes head {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 0; transform: scale(0); }
+    80% { transform: scale(1.07); opacity: 1; }
+    100% { transform: scale(1); }
+}
+header img {
+    height: calc(5vh + 5px);
+    width: auto;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+    animation: headim 2s ease-in-out;
+}
+@keyframes headim {
+    0% { opacity: 0; }
+    70% { opacity: 0; transform: scale(0); }
+    85% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+header img:hover {
+    transform: scale(1.3);
+}
+
+/********************************************************************** Home 1 **********************************************************************/
+.Home1 {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(Image/Home/Desktop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: intro 0.7s ease-in;
+}
+@keyframes intro {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.Cont {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.Shadow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(to top, white, rgba(255, 255, 255, 0));
+    z-index: 3;
+}
+.Title {
+    height: clamp(200px, 20vw, 500px);
+    position: absolute;
+    left: 12%;
+    z-index: 2;
+    animation: title 2s;
+}
+@keyframes title {
+    0% { opacity: 0; left: 0; }
+    70% { opacity: 1; left: 12%; }
+}
+.Icon {
+    height: 90vh;
+    position: relative;
+    bottom: 0;
+    margin-left: 70%;
+    margin-top: 10vh;
+    animation: icon 2s;
+}
+@keyframes icon {
+    0% { opacity: 0; bottom: -30%; }
+}
+
+/********************************************************************** Home 2 **********************************************************************/
+.Home2 {
+    display: flex;
+    flex-direction: column;
+    gap: 6vw;
+    padding: 5vw 5vw 5vw calc(var(--nav) + 6vw);
+    overflow: hidden;
+}
+.Hi {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+.Home2 img {
+    height: 30vw;
+    width: auto;
+    flex: none;
+    transition: transform 1s ease-in-out;
+    margin-top: -10vw;
+}
+.Home2 img:hover {
+    transform: rotate(15deg);
+}
+.Home2 h2 {
+    font-size: calc(5vw + 1px);
+    margin: 0 0 0.3em;
+}
+.Home2 p {
+    font-size: calc(2.5vw - 2px);
+    line-height: 1.45;
+    margin: 0;
+    height: 40vw;
+    overflow: auto;
+}
+
+/********************************************************************** Characters **********************************************************************/
+.Characters {
+    margin-top: 14vw;
+    margin-bottom: 8vw;
+    position: relative;
+}
+.Character {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    width: 90%;
+    min-height: calc(50vw + 1px);
+    margin: 0 auto 3vw;
+    padding: 5vw 6vw;
+    border: 0.5vh solid var(--taupe);
+    border-radius: 0 calc(15vw - 1px) 15px calc(15vw - 1px);
+    overflow: hidden;
+}
+#Background {
+    position: absolute;
+    inset: 0;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.Characters h1 {
+    position: absolute;
+    top: 0;
+    left: 4%;
+    transform: translateY(-50%);
+    z-index: 4;
+    margin: 0;
+    padding: 0.1em 0.8em 0.1em 0.5em;
+    font-size: clamp(32px, 5vw, 400px);
+    line-height: 1.15;
+    background-color: #fff;
+    border: 0.5vh solid var(--taupe);
+    border-top-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+}
+
+/********************************************************************** Description **********************************************************************/
+.Container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    padding: 2.2vw 2.5vw;
+    border-radius: 19px;
+    background-color: var(--glass);
+    border-left: 1.5px solid var(--cream);
+    border-right: 1.5px solid var(--cream);
+    box-shadow: 0 2px 7px 0.4px rgb(116, 116, 116);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+}
+.Name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.Name h2 {
+    margin: 0;
+    font-size: clamp(28px, 4.5vw, 102px);
+    line-height: 1.05;
+    color: var(--ink);
+    color: black;
+}
+.Name h3 {
+    margin: 0 6% 0 0;
+    align-self: flex-end;
+    font-size: clamp(22px, 3.5vw, 86px);
+    line-height: 1.1;
+    color: var(--ink);
+    color: black;
+}
+.Container p {
+    flex: 1;
+    min-height: 0;
+    margin: 3% 0 0;
+    overflow-y: auto;
+    font-size: clamp(13px, 1.55vw, 56px);
+    line-height: 1.5;
+    text-align: left;
+    color: var(--ink);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    color: black;
+}
+/********************************************************************** Flip **********************************************************************/
+.Flip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3vw;
+    width: 90%;
+    margin: 0 auto;
+    perspective: 1400px;
+}
+.Card {
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 1.2s ease-out;
+}
+.Card img {
+    display: block;
+    width: 100%;
+    border: 0.7vh solid var(--taupe);
+    border-radius: calc(1vw + 1px);
+}
+.Front {
+    backface-visibility: hidden;
+}
+.Front img {
+    height: auto;
+}
+.Back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 7%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.Back img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.Card:hover, .Card:focus-within {
+    transform: rotateY(180deg);
+}
+
+/********************************************************************** Button **********************************************************************/
+.Back button, .Hide {
+    position: relative;
+    z-index: 1;
+    padding: 0.55em 1.3em;
+    font-size: clamp(9px, calc(1.5vw + 1px), 52px);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    font-weight: 400;
+    color: var(--ink);
+    background-color: #fff;
+    border: none;
+    border-radius: 49px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.KazuB:hover {
+    background-color: #4375c5;
+    box-shadow: 0px 15px 20px rgba(46, 119, 229, 0.4);
+    color: #fff;
+    transform: translateY(-15%);
+}
+.NikoB:hover {
+    background-color: #dab539;
+    box-shadow: 0px 15px 20px rgba(222, 177, 51, 0.4);
+    color: #fff;
+    transform: translateY(-15%);
+}
+.MiwaB:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-15%);
+}
+.Back button:active {
+    transform: translateY(-1%);
+}
+.Hide {
+    flex: none;
+    align-self: center;
+    margin-top: 2%;
+}
+.Hide:hover {
+    background-color: var(--sand);
+    box-shadow: 0px 15px 20px rgba(203, 177, 164, 0.5);
+    color: #fff;
+    transform: translateY(-15%);
+}
+.Hide:active {
+    transform: translateY(-1%);
+}
+
+/********************************************************************** Gallery **********************************************************************/
+.Gallery {
+    margin-top: 12vw;
+    padding: 0 5vw 6vw;
+    background-color: var(--taupe);
+    color: var(--cream);
+    border-radius: 20vw 20vw 3vw 3vw;
+    overflow: hidden;
+}
+.Gallery h1 {
+    text-align: center;
+    margin: 7vw 0 4vw;
+    font-size: calc(9vw + 1px);
+    color: white;
+}
+.Galler {
+    width: 100%;
+}
+.Caru {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 20vw;
+    margin: 1vw 0 5vw;
+    overflow-x: auto;
+    border-radius: 25px;
+}
+.Caru::-webkit-scrollbar {
+    display: none;
+}
+.Caru::after, .Caru::before {
+    content: '';
+    height: 100%;
+    width: 15%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+.Caru::after {
+    left: 0;
+    background: linear-gradient(to left, rgba(90, 83, 81, 0), var(--taupe));
+}
+.Caru::before {
+    right: 0;
+    background: linear-gradient(to right, rgba(90, 83, 81, 0), var(--taupe));
+}
+.GalCard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    height: 100%;
+    padding-left: 1em;
+    animation: spin 25s infinite linear;
+}
+.GalCard img {
+    flex: 0 0 5em;
+    height: 80%;
+    object-fit: cover;
+    transition: 0.5s ease-out;
+}
+.GalCard img:hover {
+    transform: translateY(-10%);
+}
+.GalCard img:not(:hover) {
+    filter: blur(0.5px);
+}
+@keyframes spin {
+    from { translate: 0; }
+    to { translate: -100%; }
+}
+.VA {
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    margin-top: 4vw;
+    padding: 3vw 0 3vw calc(var(--nav) + 1vw);
+}
+.VA img {
+    flex: none;
+    height: 20vw;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+.VA img:hover {
+    animation: AV 0.3s ease-in-out;
+    border-radius: 20%;
+}
+@keyframes AV {
+    from{ border-radius: 50%;}
+    to{ border-radius: 20%;}
+}
+.VA > div {
+    flex: 1;
+    min-width: 0;
+}
+.VA h3 {
+    margin: 0 0 0.4em;
+    font-size: calc(3.2vw + 1px);
+    color: white;
+}
+.VA p {
+    margin: 0;
+    font-size: calc(1.9vw + 1px);
+    line-height: 1.4;
+    color: white;
+}
+.Gallery h2 {
+    text-align: center;
+    margin: 4vw 0 3vw;
+    font-size: calc(7vw + 1px);
+    color: white;
+}
+.Other {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
+    width: 100%;
+    margin: 0 auto 2vw;
+}
+.Other div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Other h3 {
+    margin: 0.6em 0 0;
+    text-align: center;
+    font-size: calc(2vw + 1px);
+    color: white;
+}
+.Other img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 2vw;
+}
+
+/********************************************************************** News **********************************************************************/
+#News {
+    width: 90%;
+    margin: 15vw auto 8vw;
+    padding: 5vw;
+    border: 0.5vh solid var(--taupe);
+    border-radius: 3vw;
+}
+.NewsTake {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    align-items: center;
+}
+.IMDb {
+    height: 40vw;
+    margin-top: -10vw;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 0.5vh solid var(--taupe);
+    border-radius: 2vw;
+    scrollbar-width: thin;
+    scrollbar-color: var(--taupe) transparent;
+}
+.IMDb img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.NewsTake h2 {
+    margin: 0 0 0.5em;
+    font-size: calc(3.6vw + 1px);
+}
+.NewsTake p {
+    margin: 0;
+    font-size: calc(2.2vw + 1px);
+    line-height: 1.4;
+}
+
+/********************************************************************** Slider **********************************************************************/
+.Slider {
+    position: relative;
+    width: 90%;
+    margin: 0 auto 14vw;
+}
+.ImageSlider {
+    aspect-ratio: 16 / 9;
+    border: 0.8vh solid var(--taupe);
+    border-radius: 2vw;
+    overflow: hidden;
+}
+#ImageSlide {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Butt {
+    position: absolute;
+    right: 3%;
+    bottom: -1.5vw;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+.Slider button {
+    width: clamp(70px, 11vw, 290px);
+    height: clamp(40px, 5.5vw, 190px);
+    font-size: clamp(16px, 2vw, 132px);
+    font-weight: bold;
+    color: var(--ink);
+    background-color: #fff;
+    border: 0.5vh solid var(--taupe);
+    border-radius: 4vw;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.Slider button:hover {
+    background-color: var(--sand);
+    transform: translateY(-5%);
+}
+.Slider button:active {
+    transform: translateY(0);
+    background-color: var(--taupe);
+    box-shadow: 0px 15px 20px rgba(203, 177, 164, 0.5);
+    color: #fff;
+}
+.Slider .Count {
+    cursor: default;
+    font-size: clamp(13px, 1.6vw, 124px);
+    letter-spacing: 1px;
+}
+.Slider .Count:hover, .Slider .Count:active {
+    background-color: #fff;
+    color: var(--ink);
+    transform: none;
+}
+
+/********************************************************************** Footer **********************************************************************/
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7vw 6vw 3vw;
+    text-align: center;
+    color: var(--cream);
+    background-color: var(--taupe);
+    border-radius: 20vw 20vw 0 0;
+    overflow: hidden;
+}
+footer h2 {
+    margin: 0 0 3vw;
+    font-size: clamp(30px, 5vw, 110px);
+    color: #fff;
+}
+.Account {
+    display: flex;
+    justify-content: center;
+    gap: clamp(14px, 3vw, 74px);
+}
+.Social {
+    display: grid;
+    place-items: center;
+    width: clamp(40px, 9vw, 160px);
+    aspect-ratio: 1;
+    padding: 0;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 253, 240, 0.55);
+    border-radius: 50%;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.Social img {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    pointer-events: none;
+}
+.Social:hover, .Social:focus-visible, .Social.on {
+    transform: translateY(-6px) scale(1.06);
+    background-color: var(--sand);
+    box-shadow: 0 14px 22px rgba(0, 0, 0, 0.35);
+    outline: none;
+}
+.ContactInfo {
+    margin: 3vw 0 0;
+    padding: 0.5em 1.6em;
+    min-width: min(80%, 22em);
+    font-size: clamp(15px, 2.4vw, 64px);
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 253, 240, 0.4);
+    border-radius: 5vw;
+}
+footer hr {
+    width: min(70%, 700px);
+    height: 1px;
+    margin: 5vw 0 3vw;
+    border: none;
+    background: linear-gradient(to right, transparent, var(--sand), transparent);
+}
+footer p {
+    margin: 0;
+    max-width: 38em;
+    font-size: clamp(13px, 1.9vw, 56px);
+    line-height: 1.4;
+    color: var(--cream);
+    opacity: 0.9;
+}
+footer .Legal {
+    margin-top: 0.6em;
+    font-size: clamp(11px, 1.4vw, 48px);
+    opacity: 0.65;
+}
+footer .ppp {
+    margin-top: 1.2em;
+    font-size: clamp(22px, 3.4vw, 82px);
+    font-style: italic;
+    color: var(--sand);
+    opacity: 1;
+    transform: rotate(-4deg);
+}
+.ToTop {
+    margin-top: 2.5vw;
+    padding: 0.5em 1.4em;
+    font-size: clamp(12px, 1.5vw, 50px);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cream);
+    border: 1px solid rgba(255, 253, 240, 0.5);
+    border-radius: 49px;
+    transition: all 0.3s ease;
+}
+.ToTop:hover {
+    background-color: var(--sand);
+    color: var(--ink);
+    transform: translateY(-3px);
+}
+
+/********************************************************************** Media Queries **********************************************************************/
+/********************************************************************** Phone Mode **********************************************************************/
+@media (max-width: 500px) {
+    header {
+        height: calc(60px - 2vw);
+        width: 90vw;
+        flex-direction: row;
+        top: auto;
+        left: 5%;
+        bottom: 2%;
+        gap: 15vw;
+        border-radius: 40px;
+    }
+    header img {
+        width: calc(5vw + 5px);
+        height: auto;
+    }
+
+    /************ Home 1 ************/
+    .Home1 {
+        background-image: url(Image/Home/Phone.png);
+    }
+    .Icon {
+        height: clamp(50vh, 80vh, 100vw);
+        bottom: 10%;
+        margin-left: 40px;
+    }
+    .Title {
+        height: calc(45vw - 10px);
+        bottom: 15%;
+        z-index: 3;
+    }
+    @keyframes title {
+        0% { opacity: 0; bottom: 0; }
+        70% { opacity: 1; bottom: 15%; }
+    }
+    .Shadow {
+        height: 80vh;
+    }
+
+    /************ Home 2 ************/
+    .Home2 img {
+        margin-top: 5vw;
+    }
+    .Home2 {
+        padding: 8vw 5vw 10vw;
+    }
+    .Home2 h2 {
+        font-size: 8vw;
+    }
+    .Home2 p {
+        font-size: calc(1vw + 10px);
+    }
+
+    /************ Characters ************/
+    .Characters {
+        margin-top: 18vw;
+        padding: 0 5%;
+    }
+    .Character {
+        width: 100%;
+        min-height: 135vw;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 4vw;
+    }
+    .Characters h1 {
+        font-size: 9vw;
+    }
+    .Container {
+        width: 100%;
+        height: 60%;
+        min-height: 70vw;
+        padding: 4vw;
+    }
+    .Name h2 { 
+        font-size: 8vw;
+    }
+    .Name h3 { 
+        font-size: 6vw;
+    }
+    .Container p {
+        font-size: 3.5vw;
+    }
+    .Hide {
+        font-size: 3vw;
+    }
+    .Flip {
+        width: 100%;
+        gap: 2vw;
+    }
+
+    /************ Gallery ************/
+    .Gallery {
+        padding: 0 4vw 8vw;
+    }
+    .Caru {
+        height: 32vw;
+    }
+    .GalCard {
+        gap: 0.5em;
+        padding-left: 0.5em;
+    }
+    .VA {
+        padding: 4vw 0;
+        gap: 4vw;
+    }
+    .VA img {
+        height: 28vw;
+    }
+    .VA h3 { font-size: 4.6vw; }
+    .VA p { font-size: 3.4vw; }
+    .Other {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4vw;
+    }
+    .Other h3 { font-size: 4vw; }
+
+    /************ News ************/
+    #News {
+        width: 92%;
+        padding: 5vw;
+        margin-top: 22vw;
+    }
+    .NewsTake {
+        grid-template-columns: 1fr;
+        gap: 6vw;
+    }
+    .IMDb {
+        height: 85vw;
+        margin-top: -14vw;
+    }
+    .NewsTake h2 { font-size: 6vw; }
+    .NewsTake p { font-size: 4vw; }
+
+    /************ Slider ************/
+    .Slider {
+        width: 92%;
+        margin-top: 10%;
+        margin-bottom: 18vw;
+    }
+    .Butt {
+        right: auto;
+        justify-content: center;
+        gap: 10vw;
+        position: static;
+        bottom: -4vw;
+        margin-top: -5vw;
+    }
+
+    /************ Footer ************/
+    footer {
+        padding: 12vw 6vw calc(60px + 10vw);
+    }
+    footer h2 { 
+        font-size: 8vw; margin-bottom: 6vw; 
+    }
+    .ContactInfo {
+        margin-top: 6vw; 
+    }
+    footer hr {
+        margin: 8vw 0 5vw;
+    }
+    .ToTop { 
+        margin-top: 6vw;
+    }
+}
